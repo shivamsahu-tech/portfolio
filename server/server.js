@@ -17,16 +17,19 @@ const PORT = process.env.PORT || 8000;
 app.post('/send-comment', async (req, res) => {
   try {
     const { email, comment } = req.body;
-    if (!email || !comment) {
-      return res.status(400).json({ message: 'Missing email or comment' });
+    if (!comment || !comment.trim()) {
+      return res.status(400).json({ message: 'Missing comment body' });
     }
+    
+    console.log(`Details: ${email}, Comment: ${comment}`);
+    
+    await sendMail({ email: email, comment }); 
+    
 
-    await sendMail(email, comment)
-
-    res.status(200).json({ message: 'Email sent successfully!' });
+    res.status(200).json({ message: 'Comment received and confirmation sent!' });
   } catch (error) {
-    console.error('Mail error:', error);
-    res.status(500).json({ message: 'Failed to send email' });
+    console.error('Email handling error:', error);
+    res.status(500).json({ message: 'Failed to process comment. Check server logs.' });
   }
 });
 

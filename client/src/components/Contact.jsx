@@ -1,36 +1,55 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Mail, CheckCircle, AlertCircle } from 'lucide-react'
-import sendEmail from '../sendEmail'
+import { Send, Mail, CheckCircle, AlertCircle, Receipt } from 'lucide-react'
 
 const Contact = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [status, setStatus] = useState('idle') // idle, sending, success, error
+  const [status, setStatus] = useState('idle') 
   const [errorMessage, setErrorMessage] = useState('')
 
 
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    
+const handleSubmit = async () => {
+    console.log("E : " , email + " " + message)
     if (!message.trim()) {
-      setStatus('error')
-      setErrorMessage('Please enter a message')
-      return
+      setStatus('error'); 
+      setErrorMessage('Please enter a message'); 
+      return;
     }
 
-    if(email == "" || !email.includes("@")) return;
+
+    setStatus('sending');
+    setErrorMessage('');
+    console.log(email + " " + message)
+
     try {
-      const response = await fetch("https://portfolio-kf16.onrender.com", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/send-comment`, {
         method: "POST",
-        body: {email, message}
-      })
-      const data = await response.json();
-    } catch (error) {
-      console.log("Error : ", error)
-    }
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email | "", comment: message }) 
+      });
 
+      console.log("RESponse : ", response)
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      setStatus('success');
+      setEmail(''); 
+      setMessage(''); 
+
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      // 5. Error State Update
+      setStatus('error');
+    }
+  };
 
 
   return (
@@ -58,7 +77,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="bg-[#FFFEF9] rounded-2xl p-6 sm:p-8 border-2 border-[rgba(99,102,241,0.1)] shadow-lg"
         >
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form className="space-y-5">
             {/* Email Input */}
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-[#1a1a1a] mb-2">
@@ -117,10 +136,10 @@ const Contact = () => {
             )}
 
             {/* Submit Button */}
-            <button
+            <div
               onClick={handleSubmit}
               disabled={status === 'sending'}
-              className="w-full py-3 px-6 bg-gradient-to-r from-nav-color to-accent-1 text-white rounded-lg font-semibold text-base hover:shadow-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full hover:cursor-pointer py-3 px-6 bg-gradient-to-r from-nav-color to-accent-1 text-white rounded-lg font-semibold text-base hover:shadow-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {status === 'sending' ? (
                 <>
@@ -133,7 +152,7 @@ const Contact = () => {
                   <span>Send Message</span>
                 </>
               )}
-            </button>
+            </div>
           </form>
         </motion.div>
       </div>

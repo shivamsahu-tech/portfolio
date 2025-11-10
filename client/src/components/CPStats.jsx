@@ -122,7 +122,7 @@ const CPStats = () => {
   useEffect(() => {
     const fetchCodeChef = async () => {
       try {
-        const response = await fetch(`https://portfolio-kf16.onrender.com/fetch-codechef/shsax`)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/fetch-codechef/shsax`)
         if (response.ok) {
           const data = await response.json()
           console.log(data)
@@ -130,9 +130,9 @@ const CPStats = () => {
             setStats(prev => ({
               ...prev,
               codechef: {
-                rating: parseInt(data.rating) || 0,
-                stars: data.stars || '',
-                problems: parseInt(data.problemsSolved) || 0,
+                rating: data.rating || 0,
+                maxRating: data.highestRating || '',
+                problems: data.totalSolved || "NA",
                 loading: false,
               },
             }))
@@ -147,60 +147,21 @@ const CPStats = () => {
     fetchCodeChef()
   }, [])
 
-  // Fetch GFG stats
   useEffect(() => {
     const fetchGFG = async () => {
-    //   try {
-    // const proxyUrl = 'https://api.allorigins.win/get?url='
-    // const gfgUrl = encodeURIComponent('https://geeks-for-geeks-api.vercel.app/shivamsft0t')
-
-    //   const response = await fetch(proxyUrl + gfgUrl)
-    //   if (response.ok) {
-    //     const data = await response.json()
-    //     const json = JSON.parse(data.contents) // since AllOrigins wraps it as string
-    //     console.log("GFG:", json)
-
-    //     if (json.solved) {
-    //       setStats(prev => ({
-    //         ...prev,
-    //         gfg: {
-    //           solved: parseInt(json.solved) || 0,
-    //           total: parseInt(json.total) || 2000,
-
-    //           loading: false,
-    //         },
-    //       }))
-    //     }
-    //   }
-    // } catch (err) {
-    //   console.error("Error fetching GFG stats:", err)
-    // }
-
-      try {
-        const proxyUrl = 'https://api.allorigins.win/get?url='
-        const gfgUrl = encodeURIComponent(`https://www.geeksforgeeks.org/user/shivamsft0t/`)
-        
-        const response = await fetch(proxyUrl + gfgUrl)
+      try {        
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/fetch-gfg/shivamsft0t`)
         if (response.ok) {
-          console.log("get the resule ")
           const data = await response.json()
-          const html = data.contents
-          
-         const solvedMatch = html.match(/Problem Solved.*?score.*?">(\d+)\s*</si);
-          // We look for the text "Contest Rating" and then capture the next number inside a div with a score class.
-          const ratingMatch = html.match(/Contest Rating.*?score.*?">(\d+)\s*</si);
+          console.log("GFG : ", data)
 
-        // const solved = solvedMatch ? parseInt(solvedMatch[1]) : 0;
-        // const rating = ratingMatch ? parseInt(ratingMatch[1]) : 0;
-
-        console.log("Solved:", solvedMatch, "Rating:", ratingMatch);       
-
-          if (solvedMatch) {
+          if (data) {
             setStats(prev => ({
               ...prev,
               gfg: {
-                solved: parseInt(solvedMatch[1]) ,
-                total: 2000,
+                problems: data.problemsSolved || "NA",
+                rating: data.contestRating || "NA",
+                codingScore: data.codingScore || "NA",
                 loading: false,
               },
             }))
@@ -258,9 +219,13 @@ const CPStats = () => {
       name: 'GeeksforGeeks',
       icon: TrendingUp,
       color: '#2F8D46',
-      data: stats.gfg,
-      url: 'https://auth.geeksforgeeks.org/user/shivam0ft/practice/',
-      details: [],
+      data: { ...stats.codechef, solved: stats.gfg.problems, total: 0 },
+      url: 'https://www.geeksforgeeks.org/user/shivamsft0t/',
+      details: [
+        { label: 'Rating', value: stats.gfg.rating },
+        { label: 'Coding Score', value: stats.gfg.codingScore},
+        { label: 'Problems', value: stats.gfg.problems },
+      ],
     },
   ]
 
