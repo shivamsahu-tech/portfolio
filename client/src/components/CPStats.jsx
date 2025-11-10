@@ -245,7 +245,7 @@ const CPStats = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Competitive Programming
+        Problem Solving
       </motion.h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

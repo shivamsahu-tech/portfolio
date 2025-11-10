@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FFFEF9] border-t border-[rgba(99,102,241,0.1)] mt-16 py-10 px-6 relative z-10">
+    <footer className="bg-[#FFFEF9] border-t border-[rgba(99,102,241,0.1)] mt-16 py-10 px-6 relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ const Footer = () => {
           <span className="hidden sm:block">•</span>
 
           <a
-            href="/Shivam_Sahu_Resume.pdf"
+            href={`${import.meta.env.VITE_RESUME_URL}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-nav-color transition-colors"

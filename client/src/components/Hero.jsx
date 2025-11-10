@@ -77,7 +77,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-32 pb-16 px-8 z-10">
-      <div className="max-w-[1400px] w-full relative z-[2]">
+      <div className="max-w-[1300px] w-full relative z-[2]">
         {/* Mobile Layout: Single column with custom order, Desktop: Grid layout */}
         <div className="flex flex-col lg:grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-16 items-start">
           {/* Left Column - All content properly contained */}
@@ -118,8 +118,8 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
             >
-              <h3 className="text-base text-[#4a4a4a] mb-4 font-semibold uppercase tracking-wider font-mono">
-                My Social Presence:
+              <h3 className="text-base text-[#4a4a4a] mb-4 font-semibold uppercase tracking-wider font-mono text-center lg:text-left">
+                My Social Presence
               </h3>
               <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
                 {socialLinks.map(({ icon: Icon, href, color, name }, index) => (
@@ -153,7 +153,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
             >
-              <h3 className="text-base text-[#4a4a4a] mb-4 font-semibold uppercase tracking-wider font-mono">
+              <h3 className="text-base text-[#4a4a4a] mb-4 font-semibold uppercase tracking-wider font-mono text-center lg:text-left">
                 My Career Profiles
               </h3>
               <div className="flex gap-4 flex-wrap justify-center lg:justify-start">

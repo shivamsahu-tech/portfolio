@@ -39,14 +39,14 @@ const Projects = () => {
         intro: 'User uploads meeting documents, joins live meetings, and gets intelligent responses by searching through documents and web in real-time.',
         cardHighlights: ['Multimodal Images', 'OCR Integration', 'STT Models Integration', 'Real Time Transcriptions'],
         github: 'https://github.com/shivamsahu-tech/meeting-rag',
-        deployed: 'https://meet-rag.vercel.app',
+        // deployed: 'https://meet-rag.vercel.app',
         techStack: ['NextJs', 'FastAPI', 'PostgreSQL', 'Prisma', 'Redis', 'Tailwind CSS', 'Cloudinary'],
         aiModels: ['Pixtral-12b', 'gemini-embedding-001', 'gemini-2.5-pro', 'ocr.space', 'deepgram nova mode'],
-        details: `Implemented two pipeline to process the files, first takes the docs, extract images and texts, store images on cloudinary and caption them using mistral pixtral 12b model, then chunk texts and store all in the pinecone vector database.
-In second pipelines, each pdf page sent for ocs with ocr.space api, and storeed on cloudinary and embedding stored in the pinecode.
-Implemented reflecting realtime transcriptions with interim and final transcript use web socket connections to server and then websocket connection with deepgram ai dual channel.
-Implement some agent that search question on user behalf, and use can also type the questions. Retrieval fetched vectors and data with cosine similarity, internally enhance user query, web search using serper api, and return the response to user, and user can see actual details in web search, llm reply and doc search format (actual page similar to user question).
-Also allowed email based authentications`,
+        details: `• Implemented two pipeline to process the files, first takes the docs, extract images and texts, store images on cloudinary and caption them using mistral pixtral 12b model, then chunk texts and store all in the pinecone vector database.
+• In second pipelines, each pdf page sent for ocr with ocr.space api, and stored each page on cloudinary and embedding stored in the pinecone.
+• Implemented realtime transcriptions with interim and final transcript using web socket connections to server and then websocket connection with deepgram api dual channel.
+• Implement some agent that search question on user behalf, and user also can type the questions. Retrieval fetched vectors and data with cosine similarity, internally enhance user query, web search using serper api, and return the response to user, and user can see actual details in web search, llm reply and doc search format (actual page similar to user question).
+• Also allowed email based authentications`,
         coolPoint: 'Realtime transcriptions is as similar as assembly ai playground.',
       },
       {
@@ -55,9 +55,9 @@ Also allowed email based authentications`,
         intro: 'LLM-powered RAG system enabling developers to query GitHub codebases via natural language, achieving 40% productivity improvement.',
         cardHighlights: ['Syntax Trees in Neo4j DB', 'Hybrid Retrieval System', 'Multi-language AST Parsing'],
         github: 'https://github.com/shivamsahu-tech/repo-explorar',
-        deployed: 'https://code-rag.vercel.app',
+        // deployed: 'https://code-rag.vercel.app',
         techStack: ['React', 'FastAPI', 'Tree-sitter', 'Qodoo Embeddings', 'Neo4j', 'Pinecone', 'Gemini API', 'GitHub API'],
-        details: `Engineered an LLM-powered Retrieval-Augmented Generation (RAG) system using Gemini API enabling developers to query GitHub codebases via natural language, achieving 40% productivity improvement and 50% faster developer onboarding.
+        details: `• Engineered an LLM-powered Retrieval-Augmented Generation (RAG) system using Gemini API, Enabling developers to query GitHub codebases via natural language, for productivity improvement and faster developer onboarding.
 • Developed automated ETL pipeline with FastAPI to clone repositories, parse multi-language source code using Tree-sitter language packs, extract Abstract Syntax Trees (ASTs), and generate 384-dimensional semantic embeddings via Qodoo transformer model.
 • Architected hybrid retrieval system combining Pinecone vector database for dense semantic search using cosine similarity and Neo4j graph database for structural code traversal, enabling context-aware code discovery across function dependencies.
 • Implemented multi-stage query optimization workflow: initial retrieval via top-k ranking algorithm (k=10), graph expansion through Neo4j Cypher queries, and response refinement using Gemini API with prompt engineering for hallucination reduction.
@@ -66,13 +66,13 @@ Also allowed email based authentications`,
       {
         id: 'mcp-circuit',
         title: 'MCP Circuit Designer',
-        intro: 'AI-powered Model Context Protocol server enabling LLMs to design, simulate, and validate electronic circuits from natural language input.',
+        intro: 'AI-powered Model Context Protocol Server, Enabling LLMs to design, simulate, and validate electronic circuits from natural language input.',
         cardHighlights: ['AI-Powered Circuit Design', 'SPICE Simulation', 'Automated EDA Workflows'],
-        github: 'https://github.com/shivamsahu-tech/mcp-circuit-designer',
+        github: 'https://github.com/shivamsahu-tech/circuit-designer-mcp.git',
         deployed: null,
-        techStack: ['Python', 'MCP', 'ngspice', 'FastAPI', 'duckduckgo search', 'pymupdf4llm', 'LLMs', 'SPICE'],
-        details: `Built an AI-powered Model Context Protocol (MCP) server enabling LLMs to design, simulate, and validate electronic circuits directly from natural language input, automating circuit design workflows for EDA applications.
-• Engineered specialized tools to extend LLM functionality with domain-specific reasoning: get component datasheet() to fetch and convert datasheets into Markdown for precise component specifications, and get research paper() to retrieve academic papers using PDF-to-text pipelines.
+        techStack: ['Python', 'MCP', 'ngspice', 'netlist', 'duckduckgo search', 'pymupdf4llm', 'LLMs', 'SPICE'],
+        details: `• Built an AI-powered Model Context Protocol (MCP) server enabling LLMs to design, simulate, and validate electronic circuits directly from natural language input, automating circuit design workflows for EDA applications.
+• Engineered specialized tools to extend LLM functionality with domain-specific reasoning: get_component_datasheet() to fetch and convert datasheets into Markdown for precise component specifications, and get_research_paper() to retrieve academic papers using PDF-to-text pipelines.
 • Integrated ngspice simulation interface to auto-generate, run, and analyze SPICE netlists, enabling evaluation of frequency response, voltage levels, and current flow for circuit validation and optimization.
 • Designed intelligent design loop workflow where the LLM interprets circuit requirements, selects suitable components, generates and simulates SPICE netlists, and iteratively optimizes performance for final documentation.
 • Achieved 49% improvement in circuit design quality compared to baseline LLMs, measured across component accuracy, power efficiency, signal integrity, and reproducibility metrics.
@@ -88,7 +88,7 @@ Also allowed email based authentications`,
         github: 'https://github.com/shivamsahu-tech/sharemap',
         deployed: 'https://sharemap.vercel.app',
         techStack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Socket.io', 'MapTiler API', 'React Leaflet', 'JWT', 'Crypto.js', 'A* Pathfinding'],
-        details: `Developed a scalable full-stack location-sharing application enabling real-time multi-user map interaction via secure room-based sessions using join codes and unique URLs, built on MERN stack architecture.
+        details: `• Developed a scalable full-stack location-sharing application enabling real-time multi-user map interaction via secure room-based sessions using join codes and unique URLs, built on MERN stack architecture.
 • Built interactive map interface with React Leaflet and MapTiler API, supporting both street and satellite layers, real-time markers, and live user messaging for enhanced collaboration experience.
 • Implemented WebSocket-based communication using Socket.io to stream live geolocation updates, broadcast room events (join/leave), and enable in-room chat functionality with sub-second latency.
 • Engineered secure user authentication and authorization system using JWT and Crypto.js, ensuring encrypted data transmission and private location visibility for user privacy protection.
@@ -118,7 +118,7 @@ Also allowed email based authentications`,
         id: 'shadcn-ui',
         title: 'shadcn/ui',
         intro: 'Merged PR improving documentation examples in Next.js shadcn website, fixing breaking UI issues.',
-        github: 'https://github.com/shadcn/ui/pull/23423',
+        github: 'https://github.com/shadcn-ui/ui/pull/8374',
         deployed: null,
         details: 'Contributed to shadcn/ui by improving documentation examples that were leading to breaking UI issues. The PR was successfully merged into the main repository.',
       },
@@ -128,13 +128,13 @@ Also allowed email based authentications`,
         id: 'guvi-hackathon',
         title: 'GUVI Hackathon Achievement',
         intro: 'Achieved top 10 position among 400+ teams in GUVI Hackathon.',
-        cardHighlights: ['Top 10 Position', '400+ Teams', 'Hackathon Winner'],
+        cardHighlights: ['Top 10 Position', "Schedule Hunter"],
         github: null,
         deployed: 'https://schedule-hunter.netlify.app',
         details: `Scored top 10 position among 400+ teams in GUVI Hackathon.
 Project: Schedule Hunter - A scheduling and management application.
-Certificate URL: https://tinyurl.com/df3r`,
-        certificateUrl: 'https://tinyurl.com/df3r',
+Certificate URL: https://www.guvi.in/verify-certificate?id=6z791a7Pi874FY44M7`,
+        certificateUrl: 'https://www.guvi.in/verify-certificate?id=6z791a7Pi874FY44M7',
       },
     ],
     'published-packages': [
@@ -144,6 +144,7 @@ Certificate URL: https://tinyurl.com/df3r`,
         intro: 'A Redux wrapper that helps use Redux library as an atomic library with getState(callback) and setState() methods.',
         github: null,
         deployed: 'https://www.npmjs.com/package/redux-state-handler',
+        cardHighlights: ['Experimental', "Redux"],
         details: 'Published experimental npm package. A Redux wrapper that provides getState(callback) and setState() methods, internally using useSelector and useDispatcher for getting elements. This package helps developers use Redux as an atomic library.',
         note: 'Experimental package, not recommended for production integration.',
       },
@@ -163,7 +164,7 @@ Certificate URL: https://tinyurl.com/df3r`,
 
   return (
     <section id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1300px] mx-auto">
         <motion.h2
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center lg:text-left"
           initial={{ opacity: 0, y: 20 }}
