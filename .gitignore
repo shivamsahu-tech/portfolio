@@ -66,3 +66,7 @@ server/build
 
 # Miscellaneous temporary files
 *.tgz
+
+
+server/.env
+client/.env
