@@ -36,7 +36,7 @@ const Projects = () => {
       {
         id: 'meeting-rag',
         title: 'Meeting RAG',
-        intro: 'User uploads meeting documents, joins live meetings, and gets intelligent responses by searching through documents and web in real-time.',
+        intro: 'User uploads meeting documents, joins live meetings, and gets intelligent responses by searching through documents and web in real time.',
         cardHighlights: ['Multimodal Images', 'OCR Integration', 'STT Models Integration', 'Real Time Transcriptions'],
         github: 'https://github.com/shivamsahu-tech/meeting-rag',
         // deployed: 'https://meet-rag.vercel.app',
@@ -52,7 +52,7 @@ const Projects = () => {
       {
         id: 'code-rag',
         title: 'CodeRAG AI',
-        intro: 'LLM-powered RAG system enabling developers to query GitHub codebases via natural language, achieving 40% productivity improvement.',
+        intro: 'LLM-powered RAG system enabling developers to query GitHub codebases via natural language, for productivity improvement.',
         cardHighlights: ['Syntax Trees in Neo4j DB', 'Hybrid Retrieval System', 'Multi-language AST Parsing'],
         github: 'https://github.com/shivamsahu-tech/repo-explorar',
         // deployed: 'https://code-rag.vercel.app',

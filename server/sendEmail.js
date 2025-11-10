@@ -67,10 +67,6 @@ export default async function sendEmail({ email, comment }) {
               <p style="color: #374151; font-size: 15px; line-height: 1.6; margin: 0; white-space: pre-wrap;">${comment}</p>
             </div>
             
-            <p style="color: #6b7280; font-size: 14px; text-align: center; margin: 24px 0;">
-              I'll get back to you as soon as possible!
-            </p>
-            
             <div style="margin-top: 32px; text-align: center;">
               <a href="${portfolio_url}" style="background-color: #3b82f6; color: white; padding: 12px 32px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; font-size: 16px;">Visit Portfolio</a>
             </div>
