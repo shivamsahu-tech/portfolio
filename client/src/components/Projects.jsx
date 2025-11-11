@@ -54,8 +54,8 @@ const Projects = () => {
         title: 'CodeRAG AI',
         intro: 'LLM-powered RAG system enabling developers to query GitHub codebases via natural language, for productivity improvement.',
         cardHighlights: ['Syntax Trees in Neo4j DB', 'Hybrid Retrieval System', 'Multi-language AST Parsing'],
-        github: 'https://github.com/shivamsahu-tech/repo-explorar',
-        // deployed: 'https://code-rag.vercel.app',
+        github: 'https://github.com/shivamsahu-tech/coderag-ai',
+        deployed: 'https://code-rag.vercel.app',
         techStack: ['React', 'FastAPI', 'Tree-sitter', 'Qodoo Embeddings', 'Neo4j', 'Pinecone', 'Gemini API', 'GitHub API'],
         details: `• Engineered an LLM-powered Retrieval-Augmented Generation (RAG) system using Gemini API, Enabling developers to query GitHub codebases via natural language, for productivity improvement and faster developer onboarding.
 • Developed automated ETL pipeline with FastAPI to clone repositories, parse multi-language source code using Tree-sitter language packs, extract Abstract Syntax Trees (ASTs), and generate 384-dimensional semantic embeddings via Qodoo transformer model.
