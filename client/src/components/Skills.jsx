@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2, Palette, Server, Database, Wrench, Cloud, Layers, Cpu } from 'lucide-react'
+import { Code2, Palette, Server, Database, Wrench, Cloud, Brain, Cpu } from 'lucide-react'
 
 const Skills = () => {
   const skillCategories = [
@@ -39,10 +39,10 @@ const Skills = () => {
       skills: ['Cloudinary', 'MapTiler', 'Mailjet', 'Razorpay', 'Deepgram AI']
     },
     {
-      icon: Layers,
-      title: 'Architecture',
-      skills: ['Microservices', 'Event-Driven', 'ETL Pipelines', 'API Design']
-    },
+      icon: Brain,
+      title: 'GenAI & Automation',
+      skills: ['LangChain', 'LangGraph', 'n8n', 'Smolagents']
+    }
   ]
 
   return (

@@ -49,20 +49,24 @@ const Projects = () => {
 • Also allowed email based authentications`,
         coolPoint: 'Realtime transcriptions is as similar as assembly ai playground.',
       },
-      {
-        id: 'code-rag',
-        title: 'CodeRAG AI',
-        intro: 'LLM-powered RAG system enabling developers to query GitHub codebases via natural language, for productivity improvement.',
-        cardHighlights: ['Syntax Trees in Neo4j DB', 'Hybrid Retrieval System', 'Multi-language AST Parsing'],
-        github: 'https://github.com/shivamsahu-tech/coderag-ai',
-        deployed: 'https://code-rag.vercel.app',
-        techStack: ['React', 'FastAPI', 'Tree-sitter', 'Qodoo Embeddings', 'Neo4j', 'Pinecone', 'Gemini API', 'GitHub API'],
-        details: `• Engineered an LLM-powered Retrieval-Augmented Generation (RAG) system using Gemini API, Enabling developers to query GitHub codebases via natural language, for productivity improvement and faster developer onboarding.
-• Developed automated ETL pipeline with FastAPI to clone repositories, parse multi-language source code using Tree-sitter language packs, extract Abstract Syntax Trees (ASTs), and generate 384-dimensional semantic embeddings via Qodoo transformer model.
-• Architected hybrid retrieval system combining Pinecone vector database for dense semantic search using cosine similarity and Neo4j graph database for structural code traversal, enabling context-aware code discovery across function dependencies.
-• Implemented multi-stage query optimization workflow: initial retrieval via top-k ranking algorithm (k=10), graph expansion through Neo4j Cypher queries, and response refinement using Gemini API with prompt engineering for hallucination reduction.
-• Built interactive React frontend with real-time search, syntax-highlighted code visualization, and semantic relationship mapping, validated through A/B testing showing 60%+ improvement in relevance scores versus keyword-based search.`,
-      },
+{
+  id: 'code-rag',
+  title: 'CodeRAG Agent',
+  intro: 'AI-powered code analysis agent that enables developers to query GitHub codebases using natural language, improving productivity and accelerating developer onboarding.',
+  cardHighlights: ['AST-Aware Code Analysis', 'Hybrid Vector + Graph Retrieval', 'Agentic Workflow with LangGraph'],
+  github: 'https://github.com/shivamsahu-tech/coderag-ai',
+  deployed: 'https://code-rag.vercel.app',
+  techStack: ['React', 'FastAPI', 'Tree-sitter', 'LangChain', 'LangGraph', 'Neo4j', 'Pinecone', 'Gemini API', 'GitHub API'],
+  details: `• Engineered an AI-powered code analysis system using Tree-sitter to generate AST-aware code chunks and comprehensive dependency graphs, successfully processing codebases with 10,000+ lines across multiple programming languages.
+
+- Designed and deployed a multi-language repository ingestion pipeline that extracts function definitions, resolves call hierarchies, maps import dependencies, and persists structured relationships in Neo4j graph database for efficient querying and traversal.
+
+- Implemented an agentic workflow with LangChain and LangGraph featuring context retrieval tools, top-k vector similarity search (cosine similarity) using Pinecone, and conversational memory, achieving sub-3-second response times with 90%+ answer accuracy and reduced LLM hallucinations.
+
+- Developed an interactive React frontend with real-time search capabilities, syntax-highlighted code visualization, and semantic relationship mapping that displays function dependencies and call hierarchies in an intuitive interface.
+
+- Integrated GitHub API for seamless repository cloning and FastAPI backend for efficient processing, enabling developers to analyze any public GitHub repository through natural language queries without manual code inspection.`,
+},
       {
         id: 'mcp-circuit',
         title: 'MCP Circuit Designer',
@@ -152,10 +156,10 @@ Certificate URL: https://www.guvi.in/verify-certificate?id=6z791a7Pi874FY44M7`,
     'blogs': [
       {
         id: 'blog-1',
-        title: 'Coming Soon',
-        intro: 'Blog posts will be available here soon.',
-        github: null,
-        deployed: null,
+        title: 'How I Built CodeRAG with Dependency Graph Using Tree-sitter',
+        intro: 'A deep dive into building an AI-powered code analysis agent that parses AST structures, creates dependency graphs, and enables natural language querying of codebases.',
+        github: 'https://github.com/shivamsahu-tech/coderag-ai',
+        deployed: 'https://medium.com/@shsax/how-i-built-coderag-with-dependency-graph-using-tree-sitter-0a71867059ae',
       },
     ],
   }
